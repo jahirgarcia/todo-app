@@ -1,4 +1,5 @@
 const { resolve } = require('path');
+const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -26,6 +27,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new Dotenv(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'TODO',
