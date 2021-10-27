@@ -3,7 +3,7 @@ const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-module.exports = {
+module.exports.commonConfiguration = {
   entry: './src/index.js',
   output: {
     filename: '[name].[chunkhash].js',
@@ -23,6 +23,18 @@ module.exports = {
             cacheDirectory: true
           }
         }
+      },
+      {
+        test: /\.(sa|sc|c)ss/,
+        use: [
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          },
+          'sass-loader'
+        ]
       }
     ]
   },
@@ -34,4 +46,13 @@ module.exports = {
       template: 'public/index.html'
     })
   ]
-}
+};
+
+module.exports.mergeRulesOptions = {
+  module: {
+    rules: {
+      test: 'match',
+      use: 'prepend'
+    }
+  }
+};
