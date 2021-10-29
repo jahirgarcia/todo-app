@@ -1,0 +1,13 @@
+@import '../../styles/variables';
+
+.input {
+  font-family: $font-family;
+  font-size: $font-size * 0.75;
+  border-radius: 7px;
+  border: 1px $gray-2 solid;
+  padding: 0.53125rem 0.71875rem;
+
+  &:focus {
+    outline: none;
+  }
+}
