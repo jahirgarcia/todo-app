@@ -1,0 +1,24 @@
+@import '../../styles/variables';
+
+.button-group {
+  display: inline-block;
+
+  .button {
+    color: $primary;
+    background-color: $white;
+    border-radius: 0px;
+
+    &:not(:first-child) {
+      border-left: none;
+    }
+
+    &:not(:last-child) {
+      border-right: none;
+    }
+
+    &.active {
+      color: $white;
+      background-color: $primary;
+    }
+  }
+}
