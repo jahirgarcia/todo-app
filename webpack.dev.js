@@ -3,9 +3,6 @@ const { commonConfiguration, mergeRulesOptions } = require('./webpack.common');
 
 module.exports = mergeWithRules(mergeRulesOptions)(commonConfiguration, {
   mode: 'development',
-  output: {
-    publicPath: '/'
-  },
   devServer: {
     historyApiFallback: true
   },

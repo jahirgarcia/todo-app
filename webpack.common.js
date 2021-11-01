@@ -7,7 +7,8 @@ module.exports.commonConfiguration = {
   entry: './src/index.js',
   output: {
     filename: '[name].[chunkhash].js',
-    path: resolve(__dirname, 'dist')
+    path: resolve(__dirname, 'dist'),
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', '.jsx']
